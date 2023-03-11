@@ -84,69 +84,72 @@ class DigitalTimer extends Component {
               <p className="status">{status}</p>
             </div>
           </div>
-        </div>
-        <div className="side-container">
-          {!buttonChange && (
-            <div className="start-container">
-              <button
-                className="btn"
-                type="button"
-                onClick={this.onClickStartButton}
-              >
-                <img
-                  src="https://assets.ccbp.in/frontend/react-js/play-icon-img.png"
-                  alt="play icon"
-                  className="icon"
-                />
-                Start
-              </button>
-            </div>
-          )}
-          {buttonChange && (
-            <div className="start-container">
-              <button
-                className="btn"
-                type="button"
-                onClick={this.onClickPauseButton}
-              >
-                <img
-                  src="https://assets.ccbp.in/frontend/react-js/pause-icon-img.png"
-                  alt="pause icon"
-                  className="icon"
-                />
-                Pause
-              </button>
-            </div>
-          )}
 
-          <div className="reset-container">
-            <button className="btn" type="button" onClick={this.timerReset}>
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
-                alt="reset icon"
-                className="icon"
-              />
-              Reset
-            </button>
+          <div className="side-container">
+            <div className="start-reset">
+              {!buttonChange && (
+                <div className="start-container">
+                  <button
+                    className="btn"
+                    type="button"
+                    onClick={this.onClickStartButton}
+                  >
+                    <img
+                      src="https://assets.ccbp.in/frontend/react-js/play-icon-img.png"
+                      alt="play icon"
+                      className="icon"
+                    />
+                    Start
+                  </button>
+                </div>
+              )}
+              {buttonChange && (
+                <div className="start-container">
+                  <button
+                    className="btn"
+                    type="button"
+                    onClick={this.onClickPauseButton}
+                  >
+                    <img
+                      src="https://assets.ccbp.in/frontend/react-js/pause-icon-img.png"
+                      alt="pause icon"
+                      className="icon"
+                    />
+                    Pause
+                  </button>
+                </div>
+              )}
+
+              <div className="reset-container">
+                <button className="btn" type="button" onClick={this.timerReset}>
+                  <img
+                    src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
+                    alt="reset icon"
+                    className="icon"
+                  />
+                  Reset
+                </button>
+              </div>
+            </div>
+            <p className="set-limit">Set Timer limit</p>
+            <div className="limit-setter">
+              <button
+                className="set-button"
+                type="button"
+                onClick={this.onDecrement}
+              >
+                -
+              </button>
+              <p className="time-set">{minutes}</p>
+              <button
+                className="set-button"
+                type="button"
+                onClick={this.onIncrement}
+              >
+                +
+              </button>
+            </div>
           </div>
-        </div>
-        <p className="set-limit">Set Timer limit</p>
-        <div className="limit-setter">
-          <button
-            className="set-button"
-            type="button"
-            onClick={this.onDecrement}
-          >
-            -
-          </button>
-          <p className="time-set">{minutes}</p>
-          <button
-            className="set-button"
-            type="button"
-            onClick={this.onIncrement}
-          >
-            +
-          </button>
         </div>
       </div>
     )
